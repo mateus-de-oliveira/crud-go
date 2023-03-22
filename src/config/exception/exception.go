@@ -18,7 +18,7 @@ func (r *ExceptionErr) Error() string {
 	return r.Message
 }
 
-func newExecption(message, err string, code int, causes []Causes) *ExceptionErr {
+func NewExecption(message, err string, code int, causes []Causes) *ExceptionErr {
 	return &ExceptionErr{
 		Message: message,
 		Err:     err,
@@ -27,7 +27,7 @@ func newExecption(message, err string, code int, causes []Causes) *ExceptionErr 
 	}
 }
 
-func newBadRequestError(message string) *ExceptionErr {
+func NewBadRequestError(message string) *ExceptionErr {
 	return &ExceptionErr{
 		Message: message,
 		Err:     "bad request",
@@ -35,7 +35,7 @@ func newBadRequestError(message string) *ExceptionErr {
 	}
 }
 
-func newBadRequestValidationError(message string, causes []Causes) *ExceptionErr {
+func NewBadRequestValidationError(message string, causes []Causes) *ExceptionErr {
 	return &ExceptionErr{
 		Message: message,
 		Err:     "bad request",
@@ -44,7 +44,7 @@ func newBadRequestValidationError(message string, causes []Causes) *ExceptionErr
 	}
 }
 
-func newInternalServerError(message string) *ExceptionErr {
+func NewInternalServerError(message string) *ExceptionErr {
 	return &ExceptionErr{
 		Message: message,
 		Err:     "internal server error",
@@ -52,7 +52,7 @@ func newInternalServerError(message string) *ExceptionErr {
 	}
 }
 
-func newNotFoundError(message string) *ExceptionErr {
+func NewNotFoundError(message string) *ExceptionErr {
 	return &ExceptionErr{
 		Message: message,
 		Err:     "not found",
@@ -60,7 +60,7 @@ func newNotFoundError(message string) *ExceptionErr {
 	}
 }
 
-func newForbiddenError(message string) *ExceptionErr {
+func NewForbiddenError(message string) *ExceptionErr {
 	return &ExceptionErr{
 		Message: message,
 		Err:     "forbidden",
