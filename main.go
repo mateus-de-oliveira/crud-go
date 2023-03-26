@@ -2,10 +2,16 @@ package main
 
 import (
 	"log"
+	"os"
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
+	"github.com/mateus-de-oliveira/crud-go/src/config/logger"
 	"github.com/mateus-de-oliveira/crud-go/src/controller/routes"
+)
+
+const (
+	PORT_ENV = "PORT"
 )
 
 func main() {
@@ -19,7 +25,9 @@ func main() {
 
 	routes.InitRoutes(&router.RouterGroup)
 
-	if err := router.Run(":3000"); err != nil {
+	logger.Info("Application is running on port: " + os.Getenv(PORT_ENV))
+
+	if err := router.Run(":" + os.Getenv(PORT_ENV)); err != nil {
 		log.Fatal(err)
 	}
 

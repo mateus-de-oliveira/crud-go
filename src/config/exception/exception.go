@@ -31,7 +31,7 @@ func NewBadRequestError(message string) *ExceptionErr {
 	return &ExceptionErr{
 		Message: message,
 		Err:     "bad request",
-		Code:    http.StatusBadGateway,
+		Code:    http.StatusBadRequest,
 	}
 }
 
@@ -39,7 +39,7 @@ func NewBadRequestValidationError(message string, causes []Causes) *ExceptionErr
 	return &ExceptionErr{
 		Message: message,
 		Err:     "bad request",
-		Code:    http.StatusBadGateway,
+		Code:    http.StatusBadRequest,
 		Causes:  causes,
 	}
 }
